@@ -1,3 +1,11 @@
+- Sequential: DP table, recurrence, and LCS reconstruction are implemented.
+- OpenMP: Processes tiles along anti-diagonals and sweeps five tile sizes.
+- MPI: Distributes columns across ranks and passes boundary values row by row through the pipeline.
+- Analysis: Compares tile timings and explains pipeline fill/drain; MPI runs at 1, 2, and 4 ranks let you compare scaling.
+The fill/drain part is a simple model, not a separate measurement of those phases. Also, MPI reports the LCS length without reconstructing the sequence, so compare its timings across rank counts rather than directly with Sequential/OpenMP. Those are the main limits; the core requirements are covered.
+
+
+
 # LCSWavefront
 
 Университетски проект за намиране на най-дългата обща подредица (LCS) чрез динамично програмиране.
